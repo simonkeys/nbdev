@@ -226,13 +226,7 @@ def _make_exists(self:ModuleMaker, cells, all_cells=None):
         update_var('__all__', partial(self._update_all, all_cells), fn=self.fname)
     with self.fname.open('a', encoding="utf-8") as f: write_cells(cells, self.hdr, f)
 
-<<<<<<< HEAD
 # %% ../nbs/api/02_maker.ipynb 44
-||||||| parent of 414c5f7 (WIP Add option to remove cell header comment lines on export, partly fixes #965)
-# %% ../nbs/api/maker.ipynb 44
-=======
-# %% ../nbs/api/maker.ipynb 51
->>>>>>> 414c5f7 (WIP Add option to remove cell header comment lines on export, partly fixes #965)
 def _basic_export_nb2(fname, name, dest=None):
     "A basic exporter to bootstrap nbdev using `ModuleMaker`"
     if dest is None: dest = get_config().lib_path
