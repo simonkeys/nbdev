@@ -62,7 +62,7 @@ def update_var(varname, func, fn=None, code=None):
 class ModuleMaker:
     "Helper class to create exported library from notebook source cells"
     def __init__(self, dest, name, nb_path, is_new=True, parse=True, 
-                 write_cell_hdrs=True):
+                 write_cell_hdrs=False):
         dest,nb_path = Path(dest),Path(nb_path)
         store_attr()
         self.fname = dest/(name.replace('.','/') + ".py")
@@ -226,7 +226,7 @@ def _make_exists(self:ModuleMaker, cells, all_cells=None):
         update_var('__all__', partial(self._update_all, all_cells), fn=self.fname)
     with self.fname.open('a', encoding="utf-8") as f: write_cells(cells, self.hdr, f)
 
-# %% ../nbs/api/02_maker.ipynb 44
+# %% ../nbs/api/02_maker.ipynb 51
 def _basic_export_nb2(fname, name, dest=None):
     "A basic exporter to bootstrap nbdev using `ModuleMaker`"
     if dest is None: dest = get_config().lib_path
