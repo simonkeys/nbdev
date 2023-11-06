@@ -22,8 +22,8 @@ def _is_qpy(path:Path):
     "Is `path` a py script starting with frontmatter?"
     path = Path(path)
     if not path.suffix=='.py': return
-    p = ast.parse(path.read_text())
-#     try: p = ast.parse(path.read_text())
+    p = ast.parse(path.read_text(encoding='utf-8'))
+#     try: p = ast.parse(path.read_text(encoding='utf-8'))
 #     except: return
     if not p.body: return
     a = p.body[0]
@@ -70,7 +70,7 @@ def proc_nbs(
     chk_mtime = max(cfg.config_file.stat().st_mtime, Path(__file__).stat().st_mtime)
     cache.mkdir(parents=True, exist_ok=True)
     cache_mtime = cache.stat().st_mtime
-    if force or (cache.exists and cache_mtime<chk_mtime): rmtree(cache)
+    if force or (cache.exists() and cache_mtime<chk_mtime): rmtree(cache)
 
     files = files.map(_proc_file, mtime=cache_mtime, cache=cache, path=path).filter()
     kw = {} if IN_NOTEBOOK else {'method':'spawn'}
