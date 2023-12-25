@@ -60,7 +60,7 @@ def optional_procs():
               if p not in ["nb_export", "ExportModuleProc", "optional_procs"]])
 
 # %% ../nbs/api/04_export.ipynb 16
-def nb_export(nbname, lib_path=None, procs=None, debug=False, mod_maker=ModuleMaker, name=None):
+def nb_export(nbname, lib_path=None, procs=None, debug=False, mod_maker=ModuleMaker, name=None, cell_hdrs=True):
     "Create module(s) from notebook"
     if lib_path is None: lib_path = get_config().lib_path
     exp = ExportModuleProc()
@@ -74,5 +74,5 @@ def nb_export(nbname, lib_path=None, procs=None, debug=False, mod_maker=ModuleMa
                  "Note nbdev2 no longer supports nbdev1 syntax. Run `nbdev_migrate` to upgrade.\n"
                  "See https://nbdev.fast.ai/getting_started.html for more information.")
             return
-        mm = mod_maker(dest=lib_path, name=nm, nb_path=nbname, is_new=bool(name) or mod=='#')
+        mm = mod_maker(dest=lib_path, name=nm, nb_path=nbname, is_new=bool(name) or mod=='#', cell_hdrs=cell_hdrs)
         mm.make(cells, all_cells, lib_path=lib_path)
