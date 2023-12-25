@@ -61,15 +61,14 @@ def update_var(varname, func, fn=None, code=None):
 # %% ../nbs/api/02_maker.ipynb 15
 class ModuleMaker:
     "Helper class to create exported library from notebook source cells"
-    def __init__(self, dest, name, nb_path, is_new=True, parse=True, 
-                 write_cell_hdrs=False):
+    def __init__(self, dest, name, nb_path, is_new=True, parse=True, cell_hdrs=True):
         dest,nb_path = Path(dest),Path(nb_path)
         store_attr()
         self.fname = dest/(name.replace('.','/') + ".py")
         if is_new: dest.mkdir(parents=True, exist_ok=True)
         else: assert self.fname.exists(), f"{self.fname} does not exist"
         self.dest2nb = nb_path.relpath(self.fname.parent).as_posix()
-        if write_cell_hdrs is True:
+        if cell_hdrs is True:
             self.hdr = f"# %% {self.dest2nb}"
         else:
             self.hdr = None
