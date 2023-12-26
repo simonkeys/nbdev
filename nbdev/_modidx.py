@@ -348,4 +348,5 @@ d = { 'settings': { 'branch': 'master',
                             'nbdev.sync.nbdev_update': ('api/sync.html#nbdev_update', 'nbdev/sync.py')},
             'nbdev.test': { 'nbdev.test._keep_file': ('api/test.html#_keep_file', 'nbdev/test.py'),
                             'nbdev.test.nbdev_test': ('api/test.html#nbdev_test', 'nbdev/test.py'),
-                            'nbdev.test.test_nb': ('api/test.html#test_nb', 'nbdev/test.py')}}}
+                            'nbdev.test.test_nb': ('api/test.html#test_nb', 'nbdev/test.py'),
+                            'nbdev.test.update_underscore': ('api/test.html#update_underscore', 'nbdev/test.py')}}}
