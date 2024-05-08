@@ -2,6 +2,62 @@
 
 <!-- do not remove -->
 
+## 2.3.20
+
+### Bugs Squashed
+
+- fixes UnboundLocalError: cannot access local variable `_TEMPLATE` where it is not associated with a value ([#1413](https://github.com/fastai/nbdev/pull/1413)), thanks to [@stepetal](https://github.com/stepetal)
+
+
+## 2.3.19
+
+### Bugs Squashed
+
+- Remove boxes since they broke ToC ([#1411](https://github.com/fastai/nbdev/issues/1411))
+
+
+## 2.3.18
+
+### New Features
+
+- Add magic `__` symbols to `show_doc` output ([#1410](https://github.com/fastai/nbdev/issues/1410))
+- wrap `exports` cells in a shadowed box (like a card) ([#1409](https://github.com/fastai/nbdev/pull/1409)), thanks to [@hamelsmu](https://github.com/hamelsmu)
+
+
+## 2.3.17
+
+### New Features
+
+- Move `exports` source after the `show_doc` ([#1408](https://github.com/fastai/nbdev/issues/1408))
+
+
+## 2.3.16
+
+### New Features
+
+- Add code folding for `exports` ([#1407](https://github.com/fastai/nbdev/issues/1407))
+
+
+## 2.3.15
+
+### Bugs Squashed
+
+- Reverted #1390
+
+
+## 2.3.14
+
+### New Features
+
+- Add --no_browser option to nbdev_preview ([#1400](https://github.com/fastai/nbdev/pull/1400)), thanks to [@bamford](https://github.com/bamford)
+- added conda_user and package_data to cfg_tail ([#1351](https://github.com/fastai/nbdev/pull/1351)), thanks to [@dsm-72](https://github.com/dsm-72)
+- add repo and tag options to `nbdev_new` ([#1350](https://github.com/fastai/nbdev/pull/1350)), thanks to [@dsm-72](https://github.com/dsm-72)
+
+### Bugs Squashed
+
+- Changed `serve.proc_nbs` so that it makes use of its arguments `file_glob` and `file_re` ([#1390](https://github.com/fastai/nbdev/pull/1390)), thanks to [@lukastk](https://github.com/lukastk)
+
+
 ## 2.3.13
 
 ### New Features
